@@ -135,12 +135,13 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	#gpgsign = true
 
 [diff]
 
 	# Detect copies as well as renames
 	renames = copies
+	tool = bc3
 
 [diff "bin"]
 
@@ -156,6 +157,7 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	tool = bc3
 
 [push]
 
@@ -185,3 +187,10 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+	
+[mergetool "bc3"]
+	trustExitCode = true
+	
+[difftool]
+	prompt = false
+	
